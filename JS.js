@@ -35,8 +35,8 @@ function Torneira03(){
         pos+=2;
         exe03.children[0].style.backgroundPosition = "0px "+String(pos)+"px";
         if(pos>140){
+            //acabei programando ela ficando vazia pq n consegui fazer ela parar quando clicava dnv :(
             clearInterval(intervaloTor);
-            //Mudei a img pra explica que não consegui programar ela fechando :/
             exe03Tor.src="img/torneira_aberta2.png";  
         }
     }
@@ -54,6 +54,19 @@ function Upper05(){
     exe05.value=val.toUpperCase();
 }
 
+//exe06
+var exe06 = document.getElementById("exe06");
+var forme06=exe06.children[0];
+function style06(){
+    if(event.type =='focusin'){
+        event.target.style.border = "2px solid green";
+        event.target.style.backgroundColor = "red";
+    }else if(event.type =='focusout'){
+        event.target.style.border = "1px solid red ";
+        event.target.style.backgroundColor = "green";
+    }
+    
+}
 
 window.onload = function (){
     //exe 01
@@ -72,4 +85,7 @@ window.onload = function (){
 
     //exe05
     exe05.addEventListener("change", Upper05, false);
+
+    //exe06
+    //listener montado no html :(
 }
