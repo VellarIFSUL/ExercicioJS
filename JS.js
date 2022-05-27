@@ -11,15 +11,16 @@ function OUT01(){
 var exe02 = document.getElementById("exe02");
 var exe02Int = exe02.children[1];
 var lamp = false;
-function ON02(){
-    exe02.children[0].src="img/lampada_on.jpg";
-    exe02Int.src="img/interruptor_on.jpg";
-    lamp = true;
-}
-function OFF02(){
-    exe02.children[0].src="img/lampada_off.jpg";
-    exe02Int.src="img/interruptor_off.jpg";
-    lamp = false;
+function Lamp02(){
+    if (lamp){
+        exe02.children[0].src="img/lampada_on.jpg";
+        exe02Int.src="img/interruptor_on.jpg";
+        lamp = false;
+    }else{
+        exe02.children[0].src="img/lampada_off.jpg";
+        exe02Int.src="img/interruptor_off.jpg";
+        lamp = true;
+    }
 }
 
 //exe03
@@ -49,7 +50,7 @@ window.onload = function (){
     exe01.addEventListener("mouseleave", OUT01, false);
 
     //exe 02
-    exe02Int.addEventListener("click", lamp? ON02:OFF02, false);
+    exe02Int.addEventListener("click", Lamp02, false);
     //exe 04
     var cpf = document.getElementById("cpf");
     cpf.addEventListener("keypress", ConfCPF, false);
